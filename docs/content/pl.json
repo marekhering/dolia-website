@@ -1,1 +1,59 @@
-{}
+{
+  "meta": {
+    "title": "Dolia — torebki tworzone ręcznie",
+    "description": "Dolia to marka dwóch sióstr i wspólna pasja do ręcznie tworzonych torebek. Poznaj nasz świat splotów, ciepłych kolorów i wyjątkowych detali."
+  },
+  "navigation": {
+    "label": "Nawigacja główna",
+    "skip": "Przejdź do treści",
+    "bags": "Torebki",
+    "about": "O marce",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "label": "Torebki Dolia",
+    "eyebrow": "Dwie siostry. Wspólna pasja.",
+    "title": "Piękno",
+    "titleAccent": "w każdym splocie.",
+    "description": "Ręcznie tworzone torebki, w których spotykają się ciepłe kolory, wyraziste detale i nasza miłość do tworzenia.",
+    "action": "Poznaj nasz świat",
+    "secondaryAction": "Historia Dolia",
+    "note": "Z pasji do rzeczy wyjątkowych."
+  },
+  "gallery": {
+    "caption": "Dolia / tworzone ręcznie",
+    "note": "Splot. Kolor. Detal.",
+    "images": [
+      {
+        "src": "assets/images/bags/bag_1_brown.png",
+        "alt": "Ręcznie pleciona torebka w odcieniach beżu, brązu i czerni, z okrągłymi uchwytami i zawieszką w kształcie rozgwiazdy.",
+        "width": 1086,
+        "height": 1448
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "O marce",
+    "title": "Dwie siostry.",
+    "titleAccent": "Jedna historia.",
+    "lead": "Dolia zaczyna się od nas — dwóch sióstr, które połączyła pasja do tworzenia torebek.",
+    "description": "Lubimy ciepłe odcienie, ciekawe sploty i detale, które przyciągają wzrok. W ręcznej pracy odnajdujemy przestrzeń na własne pomysły. Tak powstaje Dolia: osobista opowieść o tym, co lubimy tworzyć i nosić.",
+    "signature": "Z miłości do tworzenia, Dolia"
+  },
+  "contact": {
+    "eyebrow": "Zostańmy w kontakcie",
+    "title": "Zajrzyj do",
+    "titleAccent": "naszego świata.",
+    "description": "To w naszych socialach pokazujemy, co właśnie tworzymy. Chcesz zapytać o torebkę? Napisz do nas na Instagramie lub Facebooku.",
+    "placeholder": "Link wkrótce",
+    "note": "Adresy naszych profili pojawią się tutaj wkrótce.",
+    "socials": [
+      { "name": "Instagram", "url": "" },
+      { "name": "Facebook", "url": "" }
+    ]
+  },
+  "footer": {
+    "text": "Dolia · Torebki tworzone ręcznie",
+    "backToTop": "Do góry"
+  }
+}
