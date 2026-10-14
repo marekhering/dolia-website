@@ -1,0 +1,21 @@
+# Pliki systemowe i tymczasowe
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*.log
+
+# Lokalne ustawienia edytorów
+.idea/
+.vscode/
+
+# Lokalne zmienne środowiskowe
+.env
+.env.*
+!.env.example
+
+# Zależności, jeśli pojawią się na późniejszym etapie
+node_modules/
+
+# Local implementation notes
+/PLAN.md
