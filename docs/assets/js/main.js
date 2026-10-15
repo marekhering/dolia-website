@@ -1,5 +1,38 @@
 "use strict";
 
+function setupScrollAnimations() {
+  const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (motionPreference.matches || !("IntersectionObserver" in window)) return;
+
+  const elements = document.querySelectorAll(
+    ".hero-copy > *, .gallery img, .image-caption, .section-wave, " +
+    ".about-heading, .about-copy > *, .contact-heading, .contact-links, .site-footer"
+  );
+  const reveal = (element) => {
+    element.classList.add("is-visible");
+    observer.unobserve(element);
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) reveal(entry.target);
+    });
+  }, { threshold: 0, rootMargin: "0px 0px -24px 0px" });
+
+  elements.forEach((element) => {
+    element.classList.add("reveal");
+    observer.observe(element);
+    // Keyboard navigation must never land on an invisible link.
+    element.addEventListener("focusin", () => reveal(element), { once: true });
+  });
+
+  motionPreference.addEventListener("change", (event) => {
+    if (event.matches) {
+      observer.disconnect();
+      elements.forEach((element) => element.classList.add("is-visible"));
+    }
+  });
+}
+
 async function loadContent() {
   try {
     const response = await fetch("content/pl.json");
@@ -72,6 +105,7 @@ async function loadContent() {
       document.querySelector(".contact-note").hidden = true;
     }
     document.documentElement.classList.add("content-ready");
+    setupScrollAnimations();
   } catch (error) {
     document.getElementById("load-error").hidden = false;
     console.error("Unable to load Dolia content:", error);
