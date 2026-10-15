@@ -54,12 +54,13 @@ async function loadContent() {
     const gallery = document.getElementById("gallery");
     content.gallery.images.forEach((photo, index) => {
       const image = document.createElement("img");
-      image.src = photo.src;
       image.alt = photo.alt;
       image.width = photo.width;
       image.height = photo.height;
+      image.style.aspectRatio = `${photo.width} / ${photo.height}`;
       image.loading = index === 0 ? "eager" : "lazy";
       if (index === 0) image.fetchPriority = "high";
+      image.src = photo.src;
       gallery.append(image);
     });
 
@@ -104,8 +105,11 @@ async function loadContent() {
     if (content.contact.socials.every((social) => /^https:\/\//i.test(social.url))) {
       document.querySelector(".contact-note").hidden = true;
     }
-    document.documentElement.classList.add("content-ready");
     setupScrollAnimations();
+    // Commit the populated layout and animation state before the first reveal.
+    requestAnimationFrame(() => {
+      document.documentElement.classList.add("content-ready");
+    });
   } catch (error) {
     document.getElementById("load-error").hidden = false;
     console.error("Unable to load Dolia content:", error);

@@ -12,10 +12,12 @@
   background: var(--paper);
   scroll-behavior: smooth;
   scroll-padding-top: 110px;
+  scrollbar-gutter: stable;
 }
 
 * { box-sizing: border-box; }
 body {
+  min-height: 100svh;
   margin: 0;
   padding-bottom: 130px;
   font-size: 18px;
@@ -34,6 +36,14 @@ a:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
 ::selection { background: var(--brown); color: var(--paper); }
 [hidden] { display: none !important; }
 
+/* Render JSON content before showing the page's final layout. */
+html:not(.content-ready) .site-header,
+html:not(.content-ready) main,
+html:not(.content-ready) .site-footer,
+html:not(.content-ready) .social-dock,
+html:not(.content-ready) .skip-link { visibility: hidden; }
+html:not(.content-ready) body { background-image: none; }
+
 .site-header, .hero, .section, .site-footer {
   width: min(100% - 112px, 1320px);
   margin-inline: auto;
@@ -46,7 +56,7 @@ nav a:hover { border-color: var(--brown); }
 .skip-link { position: fixed; top: 12px; left: 12px; z-index: 10; padding: 12px 20px; background: var(--paper); transform: translateY(-200%); }
 .skip-link:focus { transform: translateY(0); }
 
-.hero { display: grid; grid-template-columns: 1fr 1.08fr; align-items: center; padding-block: 16px 56px; gap: 40px; position: relative; isolation: isolate; }
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); align-items: center; padding-block: 16px 56px; gap: 40px; position: relative; isolation: isolate; }
 .hero::before {
   content: "";
   position: absolute;
