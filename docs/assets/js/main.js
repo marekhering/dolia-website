@@ -30,26 +30,43 @@ async function loadContent() {
       gallery.append(image);
     });
 
-    const socialLinks = document.getElementById("social-links");
-    content.contact.socials.forEach((social) => {
-      const hasUrl = /^https:\/\//i.test(social.url);
-      const element = document.createElement(hasUrl ? "a" : "div");
-      element.className = "social-link";
-      if (hasUrl) {
-        element.href = social.url;
-        element.target = "_blank";
-        element.rel = "noopener noreferrer";
-      } else {
-        element.classList.add("social-placeholder");
-      }
-      const name = document.createElement("span");
-      name.textContent = social.name;
-      const status = document.createElement("span");
-      status.className = "social-status";
-      status.textContent = hasUrl ? "↗" : content.contact.placeholder;
-      if (hasUrl) status.setAttribute("aria-hidden", "true");
-      element.append(name, status);
-      socialLinks.append(element);
+    const socialIcons = {
+      Instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>',
+      Facebook: '<path d="M14 21v-8h3l.5-4H14V7c0-1.2.4-2 2-2h2V1.5c-.7-.1-1.7-.2-3-.2-3 0-5 1.8-5 5.2V9H7v4h3v8z" fill="currentColor" stroke="none"/>'
+    };
+    document.querySelectorAll("[data-social-links]").forEach((socialLinks) => {
+      content.contact.socials.forEach((social) => {
+        const hasUrl = /^https:\/\//i.test(social.url);
+        const element = document.createElement(hasUrl ? "a" : "div");
+        element.className = "social-link";
+        if (hasUrl) {
+          element.href = social.url;
+          element.target = "_blank";
+          element.rel = "noopener noreferrer";
+        } else {
+          element.classList.add("social-placeholder");
+          element.setAttribute("aria-disabled", "true");
+        }
+        const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        icon.setAttribute("viewBox", "0 0 24 24");
+        icon.setAttribute("fill", "none");
+        icon.setAttribute("stroke", "currentColor");
+        icon.setAttribute("stroke-width", "1.7");
+        icon.setAttribute("aria-hidden", "true");
+        icon.classList.add("social-icon");
+        icon.innerHTML = socialIcons[social.name] || "";
+        const name = document.createElement("span");
+        name.textContent = social.name;
+        const status = document.createElement("span");
+        status.className = "social-status";
+        status.textContent = hasUrl ? "↗" : content.contact.placeholder;
+        if (hasUrl) status.setAttribute("aria-hidden", "true");
+        const label = document.createElement("span");
+        label.className = "social-name";
+        label.append(icon, name);
+        element.append(label, status);
+        socialLinks.append(element);
+      });
     });
     if (content.contact.socials.every((social) => /^https:\/\//i.test(social.url))) {
       document.querySelector(".contact-note").hidden = true;

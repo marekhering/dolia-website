@@ -15,10 +15,7 @@
     "eyebrow": "Dwie siostry. Wspólna pasja.",
     "title": "Piękno",
     "titleAccent": "w każdym splocie.",
-    "description": "Ręcznie tworzone torebki, w których spotykają się ciepłe kolory, wyraziste detale i nasza miłość do tworzenia.",
-    "action": "Poznaj nasz świat",
-    "secondaryAction": "Historia Dolia",
-    "note": "Z pasji do rzeczy wyjątkowych."
+    "description": "Ręcznie tworzone torebki, w których spotykają się ciepłe kolory, wyraziste detale i nasza miłość do tworzenia."
   },
   "gallery": {
     "caption": "Dolia / tworzone ręcznie",
@@ -35,16 +32,17 @@
   "about": {
     "eyebrow": "O marce",
     "title": "Dwie siostry.",
-    "titleAccent": "Jedna historia.",
+    "titleAccent": "Wspólna pasja.",
     "lead": "Dolia zaczyna się od nas — dwóch sióstr, które połączyła pasja do tworzenia torebek.",
-    "description": "Lubimy ciepłe odcienie, ciekawe sploty i detale, które przyciągają wzrok. W ręcznej pracy odnajdujemy przestrzeń na własne pomysły. Tak powstaje Dolia: osobista opowieść o tym, co lubimy tworzyć i nosić.",
+    "description": "Dopiero zaczynamy i cieszymy się, że jesteś tutaj z nami. Lubimy ciepłe odcienie, ciekawe sploty i detale, które przyciągają wzrok. Nasze pomysły zamieniamy w ręcznie tworzone torebki, którymi dzielimy się w socialach.",
     "signature": "Z miłości do tworzenia, Dolia"
   },
   "contact": {
     "eyebrow": "Zostańmy w kontakcie",
     "title": "Zajrzyj do",
     "titleAccent": "naszego świata.",
-    "description": "To w naszych socialach pokazujemy, co właśnie tworzymy. Chcesz zapytać o torebkę? Napisz do nas na Instagramie lub Facebooku.",
+    "description": "Chcesz kupić torebkę lub zapytać o dostępność? Napisz do nas na Instagramie lub Facebooku — tam ustalimy szczegóły zamówienia.",
+    "orderLabel": "Zamów przez wiadomość",
     "placeholder": "Link wkrótce",
     "note": "Adresy naszych profili pojawią się tutaj wkrótce.",
     "socials": [
