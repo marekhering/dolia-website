@@ -19,7 +19,6 @@
 body {
   min-height: 100svh;
   margin: 0;
-  padding-bottom: 130px;
   font-size: 18px;
   background-color: var(--paper);
   background-image:
@@ -155,7 +154,6 @@ a.social-link .social-status { font-size: 24px; }
   .image-caption { flex-wrap: wrap; gap: 4px 16px; }
   .social-dock { bottom: 0; right: 0; width: 100%; max-width: none; border-radius: 0; padding: 12px 20px calc(12px + env(safe-area-inset-bottom)); }
   .social-dock [data-social-links] { justify-content: space-between; gap: 12px; }
-  body { padding-bottom: calc(145px + env(safe-area-inset-bottom)); }
   .eyebrow { font-size: 14px; margin-bottom: 20px; }
   h1 { font-size: clamp(36px, 8vw, 46px); }
   .intro { max-width: 440px; margin: 18px 0; font-size: 20px; }
