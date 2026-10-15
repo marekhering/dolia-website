@@ -117,7 +117,18 @@ main { overflow-x: clip; }
 }
 h2 { font-size: clamp(32px, 3.2vw, 44px); line-height: 1.15; }
 .about .eyebrow { margin-bottom: 22px; }
-.about-copy { padding-top: 40px; max-width: 440px; }
+.about-copy { position: relative; padding-top: 40px; max-width: 440px; }
+.about-copy::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 44px;
+  width: 2px;
+  height: 120px;
+  background: var(--brown);
+  opacity: .55;
+  pointer-events: none;
+}
 .about-copy .lead { font-family: var(--serif); font-size: 25px; line-height: 1.45; margin: 0 0 24px; letter-spacing: -.02em; }
 .about-copy > p:not(.lead) { font-size: 18px; line-height: 1.7; color: var(--muted); }
 .signature { display: flex; gap: 16px; align-items: center; margin-top: 30px; font-family: var(--serif); font-style: italic; font-size: 16px; }
@@ -161,6 +172,7 @@ a.social-link .social-status { font-size: 24px; }
 @media (max-width: 1000px) {
   .site-header, .hero, .section, .site-footer { width: calc(100% - 64px); }
   .hero, .about { gap: 32px; }
+  .about-copy::before { left: -16px; }
   h1 { font-size: clamp(40px, 5vw, 54px); }
   .contact { padding: 44px; gap: 40px; }
 }
@@ -187,6 +199,7 @@ a.social-link .social-status { font-size: 24px; }
   .about-backdrop::before { width: 94vw; left: -56vw; opacity: .08; }
   h2 { font-size: 36px; }
   .about-copy { padding: 0; max-width: none; }
+  .about-copy::before { position: static; display: block; height: 56px; margin-bottom: 22px; }
   .about-copy .lead { font-size: 23px; }
   .contact { grid-template-columns: 1fr; padding: 34px 26px; gap: 20px; }
   .contact h2 { font-size: 36px; }
