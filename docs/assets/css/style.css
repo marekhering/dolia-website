@@ -109,8 +109,8 @@ main { overflow-x: clip; }
   pointer-events: none;
   width: 52vw;
   aspect-ratio: 145 / 137;
-  left: -20vw;
-  top: 50%;
+  left: -12vw;
+  top: 58%;
   transform: translateY(-50%) rotate(55deg);
   background: url("../images/logo/brown/dolia-02-symbol-outline-brown.svg") center / contain no-repeat;
   opacity: .1;
@@ -198,10 +198,10 @@ a.social-link .social-status { font-size: 24px; }
   .gallery img { border-radius: 160px 160px 0 0; }
   .image-caption { font-size: 14px; letter-spacing: .07em; }
   .about { grid-template-columns: 1fr; gap: 22px; padding-block: 50px; }
-  .about-backdrop::before { width: 94vw; left: -56vw; opacity: .08; }
+  .about-backdrop::before { width: 116vw; left: -64vw; opacity: .08; }
   h2 { font-size: 36px; }
   .about-copy { padding: 0; max-width: none; }
-  .about-copy::before { position: static; display: block; height: 56px; margin-bottom: 22px; }
+  .about-copy::before { display: none; }
   .about-copy .lead { font-size: 23px; }
   .contact { grid-template-columns: 1fr; padding: 34px 26px; gap: 20px; }
   .contact h2 { font-size: 36px; }
