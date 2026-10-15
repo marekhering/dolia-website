@@ -33,6 +33,25 @@ function setupScrollAnimations() {
   });
 }
 
+function setupSocialDock() {
+  const dock = document.querySelector(".social-dock");
+  const footer = document.querySelector(".site-footer");
+  if (!dock || !footer || !("IntersectionObserver" in window)) return;
+
+  const observer = new IntersectionObserver(([entry]) => {
+    const hidden = entry.isIntersecting;
+    if (hidden && dock.contains(document.activeElement)) {
+      document.activeElement.blur();
+    }
+    dock.classList.toggle("is-hidden", hidden);
+    dock.inert = hidden;
+    if (hidden) dock.setAttribute("aria-hidden", "true");
+    else dock.removeAttribute("aria-hidden");
+  }, { threshold: 0, rootMargin: "0px 0px 48px 0px" });
+
+  observer.observe(footer);
+}
+
 async function loadContent() {
   try {
     const response = await fetch("content/pl.json");
@@ -106,6 +125,7 @@ async function loadContent() {
       document.querySelector(".contact-note").hidden = true;
     }
     setupScrollAnimations();
+    setupSocialDock();
     // Commit the populated layout and animation state before the first reveal.
     requestAnimationFrame(() => {
       document.documentElement.classList.add("content-ready");
