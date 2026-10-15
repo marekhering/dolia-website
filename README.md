@@ -1,30 +1,28 @@
 # dolia-website
 
-A Polish-language, single-page website for Dolia, a handmade handbag brand founded by two sisters. Built with plain HTML, CSS and JavaScript.
+A single-page website for Dolia, a handmade handbag brand. Built with HTML, CSS and JavaScript, intended for GitHub Pages.
+
+## Run locally
+
+Install the Live Server extension in VS Code, then right-click `docs/index.html` and select **Open with Live Server**. Any local HTTP server will also work. Opening the file directly will not load the JSON content.
+
+No build or dependency installation is required.
+
+## Structure
 
 ```text
-README.md                 Project documentation (English)
-docs/                     GitHub Pages website files
-  index.html              Home page layout
-  .nojekyll               Disable Jekyll processing on GitHub Pages
+README.md                 Project documentation
+docs/                     Website files / GitHub Pages root
+  index.html              Page layout
+  .nojekyll               Disable Jekyll processing
   content/
-    pl.json               Polish copy, image list and social URLs
+    pl.json               Text, image list and social links
   assets/
-    css/style.css         Responsive styles
-    js/main.js            Content loading and rendering
-    images/               Photos, logos and icons
+    css/style.css         Styles
+    js/main.js            Content loading and interactions
+    images/
+      bags/               Bag photos
+      logo/               Logo variants
 ```
 
-## Preview
-
-Serve `docs/` with a local HTTP server (for example, VS Code Live Server) and open `index.html` through that server. Opening the HTML directly with `file://` will not load the JSON content. No build or dependency installation is required.
-
-## Content
-
-Edit `docs/content/pl.json` to update website copy. Add photos to `assets/images/bags/` and entries to `gallery.images` (path, alternative text and dimensions). Add full HTTPS profile addresses to `contact.socials[].url`; blank addresses display a non-clickable placeholder. The pending-profile note disappears once both addresses are filled in.
-
-Future translations can use sibling JSON files such as `en.json`; a language selector is not implemented. Content currently requires JavaScript. The HTML contains only the layout and fallback error messages.
-
-## Hosting
-
-The site is prepared for GitHub Pages using the `main` branch and `/docs` folder. Asset paths are relative to support a repository URL. Publishing has not been configured.
+Website content lives in `docs/content/pl.json`. Other languages can use separate files such as `en.json`; language switching is not implemented yet.
