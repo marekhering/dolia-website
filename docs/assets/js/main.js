@@ -69,6 +69,7 @@ async function loadContent() {
     });
     document.title = content.meta.title;
     document.querySelector('meta[name="description"]').content = content.meta.description;
+    document.getElementById("contact-email").href = `mailto:${content.contact.email}`;
 
     const gallery = document.getElementById("gallery");
     content.gallery.images.forEach((photo, index) => {

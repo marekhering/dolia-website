@@ -43,11 +43,12 @@
     "titleAccent": "naszego świata.",
     "description": "Chcesz kupić torebkę lub zapytać o dostępność? Napisz do nas na Instagramie lub Facebooku — tam ustalimy szczegóły zamówienia.",
     "orderLabel": "Zamów przez wiadomość",
+    "email": "kontakt@dolia.pl",
     "placeholder": "Link wkrótce",
     "note": "Adresy naszych profili pojawią się tutaj wkrótce.",
     "socials": [
-      { "name": "Instagram", "url": "" },
-      { "name": "Facebook", "url": "" }
+      { "name": "Instagram", "url": "https://www.instagram.com/dolia_handmade/" },
+      { "name": "Facebook", "url": "https://www.facebook.com/profile.php?id=61595254747688" }
     ]
   },
   "footer": {
