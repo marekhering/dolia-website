@@ -100,9 +100,23 @@ h1 em, h2 em { font-weight: 400; color: var(--brown); }
 .wave-sand { fill: #c5a17c; }
 .wave-brown { fill: var(--brown); }
 .about { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; padding-block: 64px 90px; }
+main { overflow-x: clip; }
+.about-backdrop { position: relative; isolation: isolate; overflow: visible; }
+.about-backdrop::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  width: 52vw;
+  aspect-ratio: 145 / 137;
+  left: -20vw;
+  top: 50%;
+  transform: translateY(-50%) rotate(55deg);
+  background: url("../images/logo/brown/dolia-02-symbol-outline-brown.svg") center / contain no-repeat;
+  opacity: .1;
+}
 h2 { font-size: clamp(32px, 3.2vw, 44px); line-height: 1.15; }
 .about .eyebrow { margin-bottom: 22px; }
-.brand-symbol { width: 80px; height: 80px; object-fit: contain; margin-top: 36px; }
 .about-copy { padding-top: 40px; max-width: 440px; }
 .about-copy .lead { font-family: var(--serif); font-size: 25px; line-height: 1.45; margin: 0 0 24px; letter-spacing: -.02em; }
 .about-copy > p:not(.lead) { font-size: 18px; line-height: 1.7; color: var(--muted); }
@@ -170,8 +184,7 @@ a.social-link .social-status { font-size: 24px; }
   .gallery img { border-radius: 160px 160px 0 0; }
   .image-caption { font-size: 14px; letter-spacing: .07em; }
   .about { grid-template-columns: 1fr; gap: 22px; padding-block: 50px; }
-  .about-heading { position: relative; padding-right: 55px; }
-  .brand-symbol { position: absolute; right: 0; bottom: 4px; width: 48px; height: 48px; margin: 0; }
+  .about-backdrop::before { width: 94vw; left: -56vw; opacity: .08; }
   h2 { font-size: 36px; }
   .about-copy { padding: 0; max-width: none; }
   .about-copy .lead { font-size: 23px; }
